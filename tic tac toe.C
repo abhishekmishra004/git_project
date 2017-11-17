@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include<windows.h>
-
+#include <unistd.h>
 int point1=0,point2=0;
 char choice1,choice2;
 int position(int input,char game[]);
@@ -19,6 +19,19 @@ COORD pos = {x, y};
 SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 } 
 
+
+void loading()
+{
+	system("cls");
+	gotoxy(12,12);
+	printf("loading please wait!!\n");
+	gotoxy(12,13);
+	for(int i=0;i<8;i++)
+	{
+		printf(" :");
+		sleep(1);
+	}
+}
 
 
 
@@ -47,8 +60,10 @@ again:
 	   {
 	      printf("\n\tEnter player 1 choice X or O :") ;
 	      scanf(" %c", &choice1);
-	      if(choice1 == 'x' || choice1 == 'o' || choice1 == 'X' || choice1 == 'O')
-	        play(choice1,game);
+	      if(choice1 == 'x' || choice1 == 'o' || choice1 == 'X' || choice1 == 'O'){
+	        loading();
+			play(choice1,game);
+	       }
 	      else
 		    goto again; 
 	   }
