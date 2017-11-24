@@ -26,9 +26,9 @@ void loading()
 	gotoxy(12,12);
 	printf("loading please wait!!\n");
 	gotoxy(12,13);
-	for(int i=0;i<8;i++)
+	for(int i=0;i<5;i++)
 	{
-		printf(" :");
+		printf(" : :");
 		sleep(1);
 	}
 }
